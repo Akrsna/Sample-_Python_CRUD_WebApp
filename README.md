@@ -1,1 +1,1 @@
-# Sample-_Python_CRUD_WebApp
+This is sample python web application using Flask and SQLALCHEMY.
