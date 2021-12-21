@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Update Students {% endblock %}
+
+{% block content %}
+  <div class ="container">
+    <h1>Update Students</h1>
+    <br/><br/>
+    <form action="/update/{{student_to_update.id}}" METHOD="POST">
+      <input type="text" placeholder="first_name" name="first_name" value="{{student_to_update.first_name}}" required>
+      <input type="text" placeholder="last_name" name="last_name" value="{{student_to_update.last_name}}" required>
+      <input type="email" placeholder="email" name="email" value="{{student_to_update.email}}" required>
+      <input type="submit" value="Update Name" class="btn btn-secondary">
+    </form>
+    <br/><br/>
+
+
+  </div>
+{% endblock %}
+

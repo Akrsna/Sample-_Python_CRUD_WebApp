@@ -1,0 +1,31 @@
+version: "3.3"
+
+services:
+  db:
+    image: mysql:8.0.26
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    networks:
+      - app
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: achu123
+      MYSQL_DATABASE: students
+      MYSQL_USER: achythu
+      MYSQL_PASSWORD: achu123
+  crud:
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    networks:
+      - app
+    image: crud:latest
+    restart: always
+volumes:
+  db_data: {}
+networks:
+  app:
+
